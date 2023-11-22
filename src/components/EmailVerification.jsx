@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const EmailVerification = () => {
+const EmailVerification = ({ email }) => {
   const [otp, setOtp] = useState("");
   const [loading, setLoading] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
@@ -20,26 +19,39 @@ const EmailVerification = () => {
       setErrorMessage("Please enter the OTP code.");
       return;
     }
+
+    setLoading(true);
+
     try {
-      setLoading(true);
-
-      //  API call to verify OTP (API endpoint)
-      const response = await axios.post("https:///api/verify-otp", { otp });
-
-      setLoading(false);
+      // API call (API endpoint)
+      const response = await axios.post("https://easyinvoiceapi.onrender.com/api/auth/RequestEmailVerification/${email}", { otp });
 
       if (response.data.success) {
-        setSuccessMessage("Email verification successful!");
-        setErrorMessage("");
-        navigate.push("/dashboard");
-      } else {
-        setSuccessMessage("");
-        setErrorMessage("Invalid OTP. Please try again.");
+        // Redirect to dashboard on successful login
+        console.log(
+          "Response:",
+          response.formData,
+          response.status,
+          response.data.token
+        );
+        navigate("/dashboard");
       }
     } catch (error) {
       setLoading(false);
-      setSuccessMessage("");
-      setErrorMessage("Error verifying OTP. Please try again.");
+
+      if (error.response) {
+        console.log(error.response);
+        console.log("server responded");
+        setErrorMessage("Verification failed: server respond Error");
+      } else if (error.request) {
+        console.log("network error");
+        setErrorMessage("Verification failed: network error");
+      } else {
+        console.log("Error: " + error);
+        setErrorMessage("Error: " + error.message);
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -51,22 +63,24 @@ const EmailVerification = () => {
 
         {/* OTP Input */}
         <div>
-        <label htmlFor="otp">
-          OTP Code:
-          <input type="text" value={otp} onChange={handleOtpChange} maxLength='4' />
-        </label>
+          <label htmlFor="otp">
+            OTP Code:
+            <input
+              type="text"
+              value={otp}
+              onChange={handleOtpChange}
+              maxLength="4"
+            />
+          </label>
         </div>
-        
 
         {/* Feedback messages */}
         <div>
-        {loading && <p>Loading...</p>}
-        {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
-        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+          {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         </div>
 
         {/* Verify button */}
-        <button type="submit">Verify</button>
+        <button type="submit">{loading ? "Verifying..." : "Verify"}</button>
       </form>
     </div>
   );

@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
-    usernameOrEmail: "",
+    email: "",
     password: "",
   });
 
@@ -20,31 +20,43 @@ const LoginForm = () => {
       ...prevData,
       [name]: value,
     }));
+    console.log(formData.email + " " + formData.password);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      setLoading(true);
+    if (!formData.email || !formData.password) {
+      setErrorMessage("Please fill in email and password");
+      return;
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      setErrorMessage("Invalid email format");
+      return;
+    } else {
+      try {
+        setLoading(true);
+        const response = await axios.post("https://easyinvoiceapi.onrender.com/api/auth/login", formData);
+        setLoading(false);
 
-      // API call for login (API endpoint)
-      const response = await axios.post("https://api/login", formData);
+        if (response.data.success) {
+          console.log("Response:", response.data, response.status, response.data.token);
+          navigate("/dashboard");
+        }
+      } catch (error) {
+        setLoading(false);
 
-      setLoading(false);
-
-      if (response.data.success) {
-        // Redirect to dashboard on successful login
-        console.log("Login successful");
-        navigate.push("/dashboard");
-      } else {
-        setErrorMessage(
-          "Invalid username/email or password. Please try again or register."
-        );
+        if (error.response) {
+          console.log(error.response);
+          console.log("server respond");
+          setErrorMessage("Login failed: server respond Error");
+        } else if (error.request) {
+          console.log("network error");
+          setErrorMessage("Login failed: network error");
+        } else {
+          console.log("Error:", error);
+          setErrorMessage("Error: " + error.message);
+        }
       }
-    } catch (error) {
-      setLoading(false);
-      setErrorMessage("Error during login. Please try again.");
     }
   };
 
@@ -52,16 +64,15 @@ const LoginForm = () => {
     <div>
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        {/* Username/Email Input */}
+        {/* Email Input */}
         <div>
-          <label htmlFor="text">
-            Username or Email:
+          <label htmlFor="email">
+            Email:
             <input
-              type="text"
-              name="usernameOrEmail"
-              value={formData.usernameOrEmail}
+              type="email"
+              name="email"
+              value={formData.email}
               onChange={handleChange}
-              required
             />
           </label>
         </div>
@@ -75,19 +86,17 @@ const LoginForm = () => {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              required
             />
           </label>
         </div>
 
         {/* Feedback messages */}
-        <div>
-          {loading && <p>Loading...</p>}
+        <div>  
           {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         </div>
 
         {/* Submit button */}
-        <button type="submit">Login</button>
+        <button type="submit">{loading ? "Loading..." : "Login"}</button>
       </form>
 
       {/* Registration link */}

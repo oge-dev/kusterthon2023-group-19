@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Dashboard from './pages/Dashboard';
 import LandingPage from './pages/LandingPage';
 import LoginForm from './components/LoginForm';
 import RegistrationForm from './components/RegistrationForm';
@@ -14,7 +13,12 @@ function App() {
       <Route path='/register' element={<RegistrationForm />} />
       <Route path='/emailVerification' element={<EmailVerification />} />
       <Route path='/logIn' element={<LoginForm />} />
-      <Route path='/dashboard' element={<Dashboard />} />
+      {/* <Route path='/dashboard' element={<Dashboard />} >
+        <Route path='/dashboard/' element={<Dashboard />} />
+        <Route path='/dashboard/' element={<Dashboard />} />
+        <Route path='/dashboard/' element={<Dashboard />} />
+        <Route path='/dashboard/' element={<Dashboard />} />
+      </Route> */}
       <Route path='*' element={<NotFound />} />
     </Routes>
   );
