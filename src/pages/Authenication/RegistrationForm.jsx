@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Content from '../../components/authLayout/Authenication/Content'
+import Layout from '../../components/Authenication/Layout'
 
 const INITIAL_STATE = {
   fullName: "",
@@ -80,7 +80,7 @@ const RegistrationForm = () => {
   };
 
   return (
-    <Content>
+    <Layout>
     <div className="form-control">
       {/* Form fields */}
       <form onSubmit={handleSubmit}>
@@ -176,7 +176,7 @@ const RegistrationForm = () => {
         <button type="submit">{loading ? "Registering..." : "Register"}</button>
       </form>
     </div>
-    </Content>
+    </Layout>
 
   );
 };

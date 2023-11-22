@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Content from "../../components/authLayout/Authenication/Content";
+import Layout from '../../components/Authenication/Layout'
 import FormField from "../../components/formField/formField";
 
 const LoginForm = () => {
@@ -63,7 +63,7 @@ const LoginForm = () => {
   };
 
   return (
-    <Content>
+    <Layout>
 <div>
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
@@ -89,7 +89,7 @@ const LoginForm = () => {
         Don't have an account? <Link to="/register">Register here</Link>.
       </p>
     </div>
-    </Content>
+    </Layout>
     
   );
 };
