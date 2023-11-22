@@ -1,8 +1,13 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
-import LoginForm from "../components/LoginForm";
-import "./LandingPage.css";
+import "../styles/LandingPage.css";
+import { LoginForm } from "../components";
 
 const LandingPage = () => {
+  const handleButtonClick = () => {
+    // Handle button click actions here
+  };
+
   return (
     <div className="LandingPage-wrapper">
       LandingPage
