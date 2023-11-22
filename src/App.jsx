@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import LandingPage from './pages/LandingPage';
-import LoginForm from './components/LoginForm';
-import RegistrationForm from './components/RegistrationForm';
-import EmailVerification from './components/EmailVerification';
-import NotFound from './components/NotFound';
+import LoginForm from './pages/Authenication/LoginForm';
+import RegistrationForm from './pages/Authenication/RegistrationForm';
+import EmailVerification from './pages/Authenication/EmailVerification';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (

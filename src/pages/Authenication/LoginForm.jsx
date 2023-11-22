@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Content from "../../components/authLayout/Authenication/Content";
+import FormField from "../../components/formField/formField";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -61,35 +63,18 @@ const LoginForm = () => {
   };
 
   return (
-    <div>
+    <Content>
+<div>
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         {/* Email Input */}
         <div>
-          <label htmlFor="email">
-            Email:
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-            />
-          </label>
+          <FormField htmlFor={"email"} type={"email"} inputName={"email"} placeholder={"Email"} value={formData.email} onChange={handleChange} />
         </div>
-
         {/* Password Input */}
         <div>
-          <label htmlFor="password">
-            Password:
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-            />
-          </label>
+        <FormField htmlFor={"password"} type={"password"} inputName={"password"} placeholder={"Password"} value={formData.password} onChange={handleChange} />
         </div>
-
         {/* Feedback messages */}
         <div>  
           {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
@@ -104,6 +89,8 @@ const LoginForm = () => {
         Don't have an account? <Link to="/register">Register here</Link>.
       </p>
     </div>
+    </Content>
+    
   );
 };
 

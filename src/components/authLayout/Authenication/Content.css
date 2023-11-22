@@ -1,0 +1,70 @@
+.authenication-wrapper{
+  max-width: 100%;
+}
+.Logo{
+  width: 100%;
+
+/* margin: 0 auto; */
+/* top: 80px;
+left: 587px;
+gap: 8px; */
+
+}
+.Logo img{
+  /* top: 80px; */
+  /* left: 587px; */
+  /* width: 100%; */
+  width:  267px;
+height: 70px;
+}
+.authenication-content{
+width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+img{
+  position: absolute;
+  max-width: 473px;
+  height: 273px;
+}
+.ellipse-one{
+  top: 0;
+  left: 0;
+}
+.ellipse-two{
+  bottom: 0;
+  left: 0;
+
+}
+.ellipse-three{
+  top: 0;
+  right: 0;
+}
+.ellipse-four{
+  bottom: 0;
+  right: 0;
+}
+
+
+.Authenication-children {
+  width: 80%;
+  height: 450px;
+  padding: 12px;
+  background-color: #ffffff;
+  opacity: 0.6;
+}
+/*
+colors
+ {
+#003366
+#336699
+#66aacc
+#ffffff
+
+#000000
+#3a3a3a
+#707070
+#808080
+} 
+*/

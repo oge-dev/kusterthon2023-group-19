@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Content from '../../components/authLayout/Authenication/Content'
 
 const EmailVerification = ({ email }) => {
   const [otp, setOtp] = useState("");
@@ -56,7 +57,8 @@ const EmailVerification = ({ email }) => {
   };
 
   return (
-    <div>
+    <Content>
+ <div>
       <form onSubmit={handleVerify}>
         <h2>Email Verification</h2>
         <p>Check your email for the OTP code.</p>
@@ -83,6 +85,8 @@ const EmailVerification = ({ email }) => {
         <button type="submit">{loading ? "Verifying..." : "Verify"}</button>
       </form>
     </div>
+    </Content>
+   
   );
 };
 
