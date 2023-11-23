@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Layout from '../../components/Authenication/Layout'
+import Layout from '../AuthLayout/Layout'
 
 const EmailVerification = ({ email }) => {
   const [otp, setOtp] = useState("");

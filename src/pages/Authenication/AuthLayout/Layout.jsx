@@ -1,10 +1,10 @@
 import React from "react";
 import "./Layout.css";
-import Ellipse from "../../img/Ellipse.png";
-import Ellipse1 from "../../img/Ellipse-1.png";
-import Ellipse2 from "../../img/Ellipse-2.png";
-import Ellipse3 from "../../img/Ellipse-3.png";
-import Logo from "../../logo";
+import Ellipse from "../../../img/Ellipse.png";
+import Ellipse1 from "../../../img/Ellipse-1.png";
+import Ellipse2 from "../../../img/Ellipse-2.png";
+import Ellipse3 from "../../../img/Ellipse-3.png";
+import Logo from "../../../components/logo/logo";
 
 const Layout = ({ children }) => {
   return (

@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Layout from '../../components/Authenication/Layout'
-import FormField from "../../components/formField/formField";
+import Layout from '../AuthLayout/Layout'
+import FormField from "../../../components/formField/formField";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
