@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import Layout from '../AuthLayout/Layout'
+import { Link, useNavigate } from "react-router-dom";
+import Layout from "../AuthLayout/Layout";
+import "../Authenication.css";
+import FormField from "../../../components/formField/formField";
 
 const INITIAL_STATE = {
-  fullName: "",
-  gender: "",
-  username: "",
+  firstName: "",
+  lastName: "",
   email: "",
   password: "",
   confirmPassword: "",
@@ -25,6 +26,17 @@ const RegistrationForm = () => {
       ...prevData,
       [name]: value,
     }));
+    console.log(
+      formData.firstName +
+        " " +
+        formData.lastName +
+        " " +
+        formData.email +
+        " " +
+        formData.password +
+        " " +
+        formData.confirmPassword
+    );
   };
 
   const handleSubmit = async (e) => {
@@ -32,11 +44,11 @@ const RegistrationForm = () => {
 
     // Form validation
     if (
-      !formData.fullName ||
-      !formData.gender ||
-      !formData.username ||
+      !formData.firstName ||
+      !formData.lastName ||
       !formData.email ||
-      !formData.password
+      !formData.password ||
+      !formData.confirmPassword
     ) {
       setErrorMessage("Please fill in all fields");
       return;
@@ -51,11 +63,18 @@ const RegistrationForm = () => {
     try {
       setLoading(true);
       //  API call (API endpoint)
-      const response = await axios.post("https://easyinvoiceapi.onrender.com/api/auth/Register", formData);
+      const response = await axios.post(
+        "https://easyinvoiceapi.onrender.com/api/auth/Register",
+        formData
+      );
 
       if (response.data.success) {
-        
-        console.log("Response:", response.data, response.status, response.data.token);
+        console.log(
+          "Response:",
+          response.data,
+          response.status,
+          response.data.token
+        );
         // Redirect to emailVerification on successful Register
         navigate("/emailVerification");
       }
@@ -80,104 +99,86 @@ const RegistrationForm = () => {
   };
 
   return (
-    <Layout>
-    <div className="form-control">
-      {/* Form fields */}
-      <form onSubmit={handleSubmit}>
-        {/* Full Name */}
-        <div>
-          <label htmlFor="fullName">
-            Full Name:
-            <input
-              type="text"
-              name="fullName"
-              value={formData.fullName}
-              onChange={handleChange}
-            />
-          </label>
-        </div>
+    <Layout className="form-layout">
+      <div className="form-control">
+        <h2>Create Account</h2>
+        {/* Form fields */}
+        <form onSubmit={handleSubmit}>
+          {/* First Name & Last Name */}
+          <div className="fullName">
+            <div>
+              <FormField
+                htmlFor={"firstName"}
+                type={"text"}
+                inputName={"firstName"}
+                placeholder={"First Name"}
+                value={formData.firstName}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <FormField
+                htmlFor={"lastName"}
+                type={"text"}
+                inputName={"lastName"}
+                placeholder={"Last Name"}
+                value={formData.lastName}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
 
-        {/* Gender */}
-        <div>
-          <label htmlFor="gender">
-            Gender:
-            <select
-              name="gender"
-              value={formData.gender}
-              onChange={handleChange}
-            >
-              <option value="">Select</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-            </select>
-          </label>
-        </div>
-
-        {/* Username */}
-        <div>
-          <label htmlFor="username">
-            Username:
-            <input
-              type="text"
-              name="username"
-              value={formData.username}
-              onChange={handleChange}
-            />
-          </label>
-        </div>
-
-        {/* Email */}
-        <div>
-          <label htmlFor="email">
-            Email:
-            <input
-              type="email"
-              name="email"
+          {/* Email */}
+          <div>
+            <FormField
+              htmlFor={"email"}
+              type={"email"}
+              inputName={"email"}
+              placeholder={"Email"}
               value={formData.email}
               onChange={handleChange}
             />
-          </label>
-        </div>
+          </div>
 
-        {/* Password */}
-        <div>
-          <label htmlFor="password">
-            Password:
-            <input
-              type="password"
-              name="password"
+          {/* Password */}
+          <div>
+            <FormField
+              htmlFor={"password"}
+              type={"password"}
+              inputName={"password"}
+              placeholder={"Password"}
               value={formData.password}
               onChange={handleChange}
             />
-          </label>
-        </div>
+          </div>
 
-        {/* Confirm Password */}
-        <div>
-          <label htmlFor="confirmPassword">
-            Confirm Password:
-            <input
-              type="password"
-              name="confirmPassword"
+          {/* Confirm Password */}
+          <div>
+            <FormField
+              htmlFor={"confirmPassword"}
+              type={"password"}
+              inputName={"confirmPassword"}
+              placeholder={"Confirm Password"}
               value={formData.confirmPassword}
               onChange={handleChange}
             />
-          </label>
-        </div>
+          </div>
 
-        {/* Feedback messages */}
-        <div>
-          {loading && <p>Loading...</p>}
-          {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-        </div>
+          {/* Feedback messages */}
+          <div>
+            {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+          </div>
 
-        {/* Submit button */}
-        <button type="submit">{loading ? "Registering..." : "Register"}</button>
-      </form>
-    </div>
+          {/* Submit button */}
+          <button type="submit" className="submit-btn">
+            {loading ? "Sign Up..." : "Sign Up"}
+          </button>
+        </form>
+        <button className="logIn-btn">
+          <Link to="/logIn">I already have an Account</Link>
+        </button>
+      </div>
     </Layout>
-
   );
 };
 

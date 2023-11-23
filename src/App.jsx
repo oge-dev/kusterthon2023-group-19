@@ -12,6 +12,8 @@ import Transaction from "./pages/Dashboard/Transaction/Transaction";
 import Invoice from "./pages/Dashboard/Invioce/Invioce";
 import Settings from "./pages/Dashboard/Settings/Settings";
 import LogOUt from "./pages/Authenication/logOUt/logOUt";
+import ForgetPassWord from "./pages/Authenication/ForgetPassWord/ForgetPassWord";
+import AccountActivated from "./pages/Authenication/AccountActivated/AccountActivated.jsx";
 
 function App() {
   return (
@@ -19,7 +21,9 @@ function App() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/register" element={<RegistrationForm />} />
       <Route path="/logIn" element={<LoginForm />} />
+      <Route path="/forgetPassWord" element={<ForgetPassWord />} />
       <Route path="/emailVerification" element={<EmailVerification />} />
+      <Route path="/accountActivated" element={<AccountActivated />} />
       <Route path="/dashboard" element={<Dashboard />}>
         <Route path="/dashboard/admin" element={<Admin />} />
         <Route path="/dashboard/customerProfile" element={<Customer />} />
