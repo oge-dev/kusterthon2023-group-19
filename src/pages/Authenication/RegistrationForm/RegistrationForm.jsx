@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Layout from '../AuthLayout/Layout'
 
 const INITIAL_STATE = {
   fullName: "",
@@ -13,9 +14,7 @@ const INITIAL_STATE = {
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState(INITIAL_STATE);
-
   const [loading, setLoading] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
@@ -37,31 +36,51 @@ const RegistrationForm = () => {
       !formData.gender ||
       !formData.username ||
       !formData.email ||
-      !formData.password ||
-      formData.password !== formData.confirmPassword
+      !formData.password
     ) {
-      setErrorMessage("Please fill in all fields and ensure passwords match.");
+      setErrorMessage("Please fill in all fields");
+      return;
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      setErrorMessage("Invalid email format");
+      return;
+    } else if (formData.password !== formData.confirmPassword) {
+      setErrorMessage("Ensure password and confirm password match.");
       return;
     }
+
     try {
       setLoading(true);
-
       //  API call (API endpoint)
-      const response = await axios.post("https://api/register", formData);
+      const response = await axios.post("https://easyinvoiceapi.onrender.com/api/auth/Register", formData);
 
-      setLoading(false);
-      setSuccessMessage(response.data.message);
-      navigate.push("/emailVerification");
-      setErrorMessage("");
+      if (response.data.success) {
+        
+        console.log("Response:", response.data, response.status, response.data.token);
+        // Redirect to emailVerification on successful Register
+        navigate("/emailVerification");
+      }
     } catch (error) {
-      console.log(error.data.message);
       setLoading(false);
-      setSuccessMessage("");
-      setErrorMessage("Registration failed. Please try again.");
+      console.log("Error:", error);
+
+      if (error.response) {
+        console.log(error.response);
+        console.log("server responded");
+        setErrorMessage("Registration failed: server respond Error");
+      } else if (error.request) {
+        console.log("network error");
+        setErrorMessage("Registration failed: network error");
+      } else {
+        console.log("Error: " + error);
+        setErrorMessage("Error: " + error.message);
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
+    <Layout>
     <div className="form-control">
       {/* Form fields */}
       <form onSubmit={handleSubmit}>
@@ -74,7 +93,6 @@ const RegistrationForm = () => {
               name="fullName"
               value={formData.fullName}
               onChange={handleChange}
-              required
             />
           </label>
         </div>
@@ -87,7 +105,6 @@ const RegistrationForm = () => {
               name="gender"
               value={formData.gender}
               onChange={handleChange}
-              required
             >
               <option value="">Select</option>
               <option value="male">Male</option>
@@ -106,7 +123,6 @@ const RegistrationForm = () => {
               name="username"
               value={formData.username}
               onChange={handleChange}
-              required
             />
           </label>
         </div>
@@ -120,7 +136,6 @@ const RegistrationForm = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              required
             />
           </label>
         </div>
@@ -134,7 +149,6 @@ const RegistrationForm = () => {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              required
             />
           </label>
         </div>
@@ -148,7 +162,6 @@ const RegistrationForm = () => {
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
-              required
             />
           </label>
         </div>
@@ -156,14 +169,15 @@ const RegistrationForm = () => {
         {/* Feedback messages */}
         <div>
           {loading && <p>Loading...</p>}
-          {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
           {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         </div>
 
         {/* Submit button */}
-        <button type="submit">Register</button>
+        <button type="submit">{loading ? "Registering..." : "Register"}</button>
       </form>
     </div>
+    </Layout>
+
   );
 };
 

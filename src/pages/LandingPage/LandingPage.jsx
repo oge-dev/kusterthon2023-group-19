@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import "../styles/LandingPage.css";
-import { LoginForm } from "../components";
+import "./LandingPage.css";
+
 
 const LandingPage = () => {
   const handleButtonClick = () => {
@@ -11,9 +11,6 @@ const LandingPage = () => {
   return (
     <div className="LandingPage-wrapper">
       LandingPage
-      <div className="LoginForm">
-        <LoginForm />
-      </div>
     </div>
   );
 };
