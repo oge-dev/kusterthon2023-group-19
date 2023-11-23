@@ -1,7 +1,9 @@
 # CrediEase with React + Vite
 
-backend url: https://easyinvoiceapi.onrender.com/swagger/index.html
-figma: https://www.figma.com/file/hJKOmivbIchkVeZnmlFW3r?type=design
+# backend 
+url: https://easyinvoiceapi.onrender.com/swagger/index.html
+# figma
+url: https://www.figma.com/file/hJKOmivbIchkVeZnmlFW3r?type=design
 
 # colors
  {
@@ -16,10 +18,10 @@ figma: https://www.figma.com/file/hJKOmivbIchkVeZnmlFW3r?type=design
 #808080
 } 
 # clone
-url: 
+url: https://github.com/julietoge/kusterthon2023-group-19/tree/dev
 # run: 
 npm install
-# pull dev before coding or before pushing
+# pull dev before coding and before pushing your own branch
 npm pull origin dev
 # already installed dependencies
     "axios": "^1.6.2",
