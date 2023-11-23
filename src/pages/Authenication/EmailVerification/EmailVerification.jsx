@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Layout from '../AuthLayout/Layout'
+import Layout from "../AuthLayout/Layout";
 
 const EmailVerification = ({ email }) => {
   const [otp, setOtp] = useState("");
@@ -25,7 +25,10 @@ const EmailVerification = ({ email }) => {
 
     try {
       // API call (API endpoint)
-      const response = await axios.post("https://easyinvoiceapi.onrender.com/api/auth/RequestEmailVerification/${email}", { otp });
+      const response = await axios.post(
+        "https://easyinvoiceapi.onrender.com/api/auth/RequestEmailVerification/${email}",
+        { otp }
+      );
 
       if (response.data.success) {
         // Redirect to dashboard on successful login
@@ -58,35 +61,34 @@ const EmailVerification = ({ email }) => {
 
   return (
     <Layout>
- <div>
-      <form onSubmit={handleVerify}>
-        <h2>Email Verification</h2>
-        <p>Check your email for the OTP code.</p>
+      <div>
+        <form onSubmit={handleVerify}>
+          <h2>Email Verification</h2>
+          <p>Check your email for the OTP code.</p>
 
-        {/* OTP Input */}
-        <div>
-          <label htmlFor="otp">
-            OTP Code:
-            <input
-              type="text"
-              value={otp}
-              onChange={handleOtpChange}
-              maxLength="4"
-            />
-          </label>
-        </div>
+          {/* OTP Input */}
+          <div>
+            <label htmlFor="otp">
+              OTP Code:
+              <input
+                type="text"
+                value={otp}
+                onChange={handleOtpChange}
+                maxLength="4"
+              />
+            </label>
+          </div>
 
-        {/* Feedback messages */}
-        <div>
-          {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-        </div>
+          {/* Feedback messages */}
+          <div>
+            {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+          </div>
 
-        {/* Verify button */}
-        <button type="submit">{loading ? "Verifying..." : "Verify"}</button>
-      </form>
-    </div>
+          {/* Verify button */}
+          <button type="submit">{loading ? "Verifying..." : "Verify"}</button>
+        </form>
+      </div>
     </Layout>
-   
   );
 };
 

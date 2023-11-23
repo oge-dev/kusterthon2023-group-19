@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const CustomButton = ({children}) => {
+const CustomButton = ({ children }) => {
   return (
-    <div className='custom-btn'>
+    <div className="custom-btn">
       <button>{children}</button>
     </div>
-  )
-}
+  );
+};
 
 export default CustomButton;

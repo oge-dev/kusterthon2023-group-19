@@ -5,10 +5,9 @@ import Layout from "../AuthLayout/Layout";
 import FormField from "../../../components/formField/formField";
 import "../Authenication.css";
 
-const LoginForm = () => {
+const ForgetPassWord = () => {
   const [formData, setFormData] = useState({
     email: "",
-    password: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -23,14 +22,14 @@ const LoginForm = () => {
       ...prevData,
       [name]: value,
     }));
-    console.log(formData.email + " " + formData.password);
+    console.log(formData.email);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formData.email || !formData.password) {
-      setErrorMessage("Please fill in email and password");
+    if (!formData.email) {
+      setErrorMessage("Please fill in your email");
       return;
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       setErrorMessage("Invalid email format");
@@ -39,7 +38,7 @@ const LoginForm = () => {
       try {
         setLoading(true);
         const response = await axios.post(
-          "https://easyinvoiceapi.onrender.com/api/auth/login",
+          "https://easyinvoiceapi.onrender.com/",
           formData
         );
         setLoading(false);
@@ -74,7 +73,7 @@ const LoginForm = () => {
   return (
     <Layout className="form-layout">
       <div className="form-control">
-        <h2>Sign In</h2>
+        <h2>Forget Password</h2>
         <form onSubmit={handleSubmit}>
           {/* Email Input */}
           <div>
@@ -87,17 +86,6 @@ const LoginForm = () => {
               onChange={handleChange}
             />
           </div>
-          {/* Password Input */}
-          <div>
-            <FormField
-              htmlFor={"password"}
-              type={"password"}
-              inputName={"password"}
-              placeholder={"Password"}
-              value={formData.password}
-              onChange={handleChange}
-            />
-          </div>
           {/* Feedback messages */}
           <div>
             {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
@@ -105,20 +93,17 @@ const LoginForm = () => {
 
           {/* Submit button */}
           <button type="submit" className="submit-btn">
-            {loading ? "Sign In..." : "Sign In"}
+            {loading ? "loading..." : "Send Recovery Link"}
           </button>
         </form>
 
         {/* Registration link */}
         <button className="register-btn">
-          <Link to="/register">Create Account</Link>
+          <Link to="/logIn">Back to Sign In</Link>
         </button>
-      </div>
-      <div className="forgetPassword-link">
-        <Link to="/forgetPassWord">Forget Password?</Link>
       </div>
     </Layout>
   );
 };
 
-export default LoginForm;
+export default ForgetPassWord;

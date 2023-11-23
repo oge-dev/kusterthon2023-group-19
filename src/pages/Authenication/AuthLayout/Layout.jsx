@@ -11,12 +11,10 @@ const Layout = ({ children }) => {
     <div className="authenication-wrapper">
       <Logo />
       <div className="authenication-content">
-        <div className="image-wrapper">
-          <img src={Ellipse} alt="" className="ellipse-one" />
-          <img src={Ellipse1} alt="" className="ellipse-two" />
-          <img src={Ellipse2} alt="" className="ellipse-three" />
-          <img src={Ellipse3} alt="" className="ellipse-four" />
-        </div>
+        <img src={Ellipse} alt="" className="ellipse-one" />
+        <img src={Ellipse1} alt="" className="ellipse-two" />
+        <img src={Ellipse2} alt="" className="ellipse-three" />
+        <img src={Ellipse3} alt="" className="ellipse-four" />
         <div className="Authenication-children">
           <div className="children">{children}</div>
         </div>
