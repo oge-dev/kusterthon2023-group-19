@@ -1,0 +1,47 @@
+/* Styles for the Invoice component */
+
+/* Container for the entire invoice */
+.invoice-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+/* Title section with 'Invoice' and 'Add Invoice' button */
+.invoice-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1110px;
+  margin-bottom: 20px;
+}
+
+/* Main section containing header and card */
+.main-invoice {
+  width: 1110px;
+}
+
+/* Container for the InvoiceHeader */
+.invoice-header-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0 20px;
+}
+
+/* Container for the invoice card */
+.invoice-card {
+  width: 100%;
+  border-radius: 0 0 15px 15px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Styles for the invoice list text */
+.invoice-card p {
+  text-align: center;
+  margin: 0;
+  padding: 10px 0;
+}

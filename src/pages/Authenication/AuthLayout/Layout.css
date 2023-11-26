@@ -1,0 +1,54 @@
+.authenication-wrapper {
+  max-width: 100%;
+  position: relative;
+}
+.authenication-wrapper.Logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.authenication-wrapper .Logo img {
+  width: 267px;
+  height: 70px;
+}
+
+.authenication-wrapper .authenication-content {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.authenication-wrapper img {
+  position: absolute;
+  max-width: 473px;
+  height: 273px;
+}
+.authenication-wrapper .ellipse-one {
+  top: 0;
+  left: 0;
+}
+.authenication-wrapper .ellipse-two {
+  bottom: 0;
+  left: 0;
+}
+.authenication-wrapper .ellipse-three {
+  top: 0;
+  right: 0;
+}
+.authenication-wrapper .ellipse-four {
+  bottom: 0;
+  right: 0;
+}
+.authenication-wrapper .Authenication-children {
+  width: 80%;
+  padding: 12px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 5px #808080;
+  opacity: 0.6;
+}
+
+.authenication-wrapper .Authenication-children .children {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
