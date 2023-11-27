@@ -24,7 +24,6 @@ const ForgetPassWord = () => {
       localStorage.setItem("resetEmail", { email });
 
       navigate("/resetPassword"); // Navigate to ResetPassword component
-      console.log(response.data);
     } catch (error) {
       console.error("Error sending forgot password request:", error);
       setMessage("An error occurred. Please try again later.error:", error);
@@ -57,7 +56,7 @@ const ForgetPassWord = () => {
 
           {/* Registration link */}
           <button className="forgetPassword-logIn-btn">
-            <Link to="/logIn">Back to Sign In</Link>
+            <Link to="/signIn">Back to Sign In</Link>
           </button>
         </div>
       </Layout>
@@ -85,24 +84,22 @@ const ResetPassword = ({ match }) => {
     }
   }, [navigate]);
 
-  const handleResetPassword = async () => {
+  const handleResetPassword = async (e) => {
     e.preventDefault();
     try {
       // Retrieve stored email from local storage
       const resetEmail = localStorage.getItem("resetEmail");
 
-      // Send password reset token, email, and new password to the server
-    await axios.post(
-        "https://easyinvoiceapi.onrender.com/api/Auth/ResetPassword",
-        { resetToken: match.params.token, email: resetEmail, password }
-      );
-      // Remove stored email from local storage
-      localStorage.removeItem("resetEmail");
+      
+       // Send password reset token, email, and new password to the server
+       await axios.post('https://easyinvoiceapi.onrender.com/api/Auth/ResetPassword', {
+        email: resetEmail, password, token: match.params.token  
+      });
+     // Remove stored email from local storage
+     localStorage.removeItem('resetEmail');
 
-      // Display a success message to the user
-      setMessage(
-        "Password reset successfully. You can now log in with your new password."
-      );
+     // Display a success message to the user
+     setMessage('Password reset successfully. You can now log in with your new password.');
 
       // Navigate to the success page after a accountActivated
       navigate("/accountActivated");

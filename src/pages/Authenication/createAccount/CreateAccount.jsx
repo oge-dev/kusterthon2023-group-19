@@ -161,7 +161,7 @@ const CreateAccount = () => {
             </button>
           </form>
           <button className="signUp-logIn-btn">
-            <Link to="/logIn">I already have an Account</Link>
+            <Link to="/signIn">I already have an Account</Link>
           </button>
         </div>
       </Layout>

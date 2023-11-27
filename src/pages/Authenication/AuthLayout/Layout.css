@@ -1,16 +1,15 @@
-.authenication-wrapper .authenication-wrapper {
+.authenication-wrapper {
   position: relative;
   max-width: 1440px;
   background: var(--primary-pure-white, #fff);
-  font-family: "poppins", sans-serif;
 }
-.authenication-wrapper .authenication-wrapper.Logo {
+.authenication-wrapper .Logo {
   width: 100%;
   display: flex;
   justify-content: center;
   padding: 28px 0 40px;
 }
-.authenication-wrapper .authenication-wrapper .Logo img {
+.authenication-wrapper .Logo img {
   width: 267px;
   height: 70px;
   background: linear-gradient(
@@ -25,14 +24,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-.authenication-wrapper .authenication-content {
-  width: 100%;
-  height: 100vh;
-  display: grid;
-  place-items: center;
-}
-.authenication-wrapper img {
+.authenication-wrapper .authenication-content img {
   position: absolute;
   max-width: 473px;
   /* height: 473px; */
@@ -54,17 +46,19 @@
   bottom: 0;
   right: 0;
 }
-.authenication-wrapper .Authenication-children {
-  width: 80%;
-  padding: 12px;
-  background-color: #ffffff;
-  box-shadow: 0px 0px 5px #808080;
-  opacity: 0.6;
-}
 
-.authenication-wrapper .Authenication-children .children {
-  width: 60%;
-  margin: 0 auto;
+.authenication-wrapper .Authenication-children {
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: linear-gradient(
+    180deg,
+    rgba(217, 217, 217, 0.4) 0%,
+    rgba(217, 217, 217, 0.1) 100%
+  );
+  box-shadow: 0px 4px 20px -1px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  max-width: 1020px;
+  margin: 20px auto 0;
   text-align: center;
   padding: 28px 0;
 }
