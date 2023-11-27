@@ -14,12 +14,12 @@ import Settings from "./pages/Dashboard/Settings/Settings";
 import LogOUt from "./pages/Authenication/logOUt/logOUt";
 import ForgetPassWord from "./pages/Authenication/ForgetPassWord/ForgetPassWord";
 import AccountActivated from "./pages/Authenication/AccountActivated/AccountActivated.jsx";
-import {ftData} from "./utils/ftData.js"
+import {ftData, stepsData, aboutData} from "./utils/ftData.js"
 
 function App() {
   return (
     <Routes className="App">
-      <Route path="/" element={<LandingPage ftData={ftData} />} />
+      <Route path="/" element={<LandingPage ftData={ftData} stepsData={stepsData} aboutData={aboutData}/>} />
       <Route path="/register" element={<RegistrationForm />} />
       <Route path="/logIn" element={<LoginForm />} />
       <Route path="/forgetPassWord" element={<ForgetPassWord />} />
