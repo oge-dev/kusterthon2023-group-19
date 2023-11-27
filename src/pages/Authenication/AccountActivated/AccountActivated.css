@@ -22,7 +22,8 @@ line-height: normal;
 }
 
 .accountActivated-form-control .accountActivated-logIn-btn {
-  width: 709px;
+  /* width: 709px; */
+  width: 78%;
   height: 58px;
   flex-shrink: 0;
   border-radius: 6px;
