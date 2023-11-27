@@ -66,10 +66,7 @@
   text-decoration: underline;
 }
 .SignIn-forgetPassword-link {
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  
   position: absolute;
  bottom: 30px;
  left: 46%;
@@ -77,6 +74,10 @@
 .SignIn-forgetPassword-link a {
   color: var(--primary-dark-blue, #036);
   text-decoration: none;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 .SignIn-forgetPassword-link a:hover {
   text-decoration: underline;
