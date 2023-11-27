@@ -10,14 +10,14 @@ import FeatureCard from "../../components/FeatureCard";
 import BtnElement from "../../components/BtnElement";
 import GridTwoCard from "../../components/GridTwoCard";
 import Footer from "../../components/Footer";
+import NavBar from "../../components/NavBar";
 
 const LandingPage = (props) => {
-  const handleButtonClick = () => {
-    // Handle button click actions here
-  };
-
+  
   return (
     <>
+    <NavBar/>
+    <main className="landing">
       <section className="section-hero">
         <div className="container">
           <div className="hero">
@@ -145,8 +145,10 @@ const LandingPage = (props) => {
 
         </div>
       </section>
+      </main>
       <Footer/>
     </>
+    
   );
 };
 

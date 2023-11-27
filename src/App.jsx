@@ -1,3 +1,4 @@
+import React, {useState} from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import LandingPage from "./pages/LandingPage/LandingPage";
@@ -16,10 +17,23 @@ import ForgetPassWord from "./pages/Authenication/ForgetPassWord/ForgetPassWord"
 import AccountActivated from "./pages/Authenication/AccountActivated/AccountActivated.jsx";
 import {ftData, stepsData, aboutData} from "./utils/ftData.js"
 
+
+
 function App() {
+
+  const [showNavBar, setShowNavBar] = useState(false);
+
+
+
+
+  function handleShowNavBar(){
+      setShowNavBar(!showNavBar)
+  }
+
+
   return (
     <Routes className="App">
-      <Route path="/" element={<LandingPage ftData={ftData} stepsData={stepsData} aboutData={aboutData}/>} />
+      <Route path="/" element={<LandingPage  handleShowNavBar={handleShowNavBar} ftData={ftData} stepsData={stepsData} aboutData={aboutData}/>} />
       <Route path="/register" element={<RegistrationForm />} />
       <Route path="/logIn" element={<LoginForm />} />
       <Route path="/forgetPassWord" element={<ForgetPassWord />} />
