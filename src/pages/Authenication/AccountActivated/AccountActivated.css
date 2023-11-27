@@ -1,0 +1,44 @@
+.accountActivatedlayout-wrappper .authenication-wrapper{
+  height: 668px;
+}
+.accountActivatedlayout-wrappper .Authenication-children {
+  height: 371px;
+}
+
+.accountActivated-form-control h3 {
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 80px;
+  line-height: normal;
+  color: var(--primary-dark-blue, #036);
+}
+.accountActivated-form-control p{
+  color: var(--neutral-dark-grey, #3A3A3A);
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+
+.accountActivated-form-control .accountActivated-logIn-btn {
+  width: 709px;
+  height: 58px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #369 0.03%, #6ac 100%);
+  margin-top: 80px;
+  border: none;
+
+}
+.accountActivated-logIn-btn a{
+  text-decoration: none;
+  color: var(--primary-pure-white, #fff);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.accountActivated-logIn-btn a:hover {
+  text-decoration: underline;
+}
