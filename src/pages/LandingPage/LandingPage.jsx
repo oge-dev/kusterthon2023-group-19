@@ -9,6 +9,7 @@ import customa5 from "../../img/cs5.svg";
 import FeatureCard from "../../components/FeatureCard";
 import BtnElement from "../../components/BtnElement";
 import GridTwoCard from "../../components/GridTwoCard";
+import Footer from "../../components/Footer";
 
 const LandingPage = (props) => {
   const handleButtonClick = () => {
@@ -119,6 +120,7 @@ const LandingPage = (props) => {
         </div>
       </section>
 
+
       <section>
         <div className="container">
           <h2 className="subheading">About Us</h2>
@@ -131,6 +133,14 @@ const LandingPage = (props) => {
           </div>
         </div>
       </section>
+
+      <section>
+        <div className="container">
+          <h2 className="subheading">Get In Touch With... </h2>
+
+        </div>
+      </section>
+      <Footer/>
     </>
   );
 };
