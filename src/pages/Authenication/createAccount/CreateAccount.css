@@ -15,11 +15,15 @@
 }
 .createAccount-form-control .firstName-lastName-wrapper{
   display: flex;
-  justify-content: center;
-gap: 60px;
+  flex-direction: row;
+  justify-content: space-between;
+/* gap: 10px; */
+width: 78%;
+margin: 28px auto 0;
 }
 .firstName-lastName-wrapper  input{
-  width: 325px;
+  /* width: 325px;  */
+  width: 325px; 
 height: 58px;
 flex-shrink: 0;
 border-radius: 6px;
@@ -32,7 +36,8 @@ margin: 8px auto;
 .createAccount-form-control .email, .createAccount-form-control .password {
   padding-left: 6px;
   outline: none;
-  width: 709px;
+  /* width: 709px; */
+  width: 78%;
   height: 58px;
   flex-shrink: 0;
   border-radius: 6px;
@@ -43,7 +48,8 @@ margin: 8px auto;
 }
 
 .createAccount-form-control .signUp-btn {
-  width: 709px;
+  /* width: 709px; */
+  width: 78%;
   height: 58px;
   flex-shrink: 0;
   border-radius: 6px;
@@ -60,7 +66,8 @@ margin: 8px auto;
   text-decoration: underline;
 }
 .createAccount-form-control .signUp-logIn-btn{
-  width: 709px;
+  /* width: 709px; */
+  width: 78%;
   height: 58px;
   flex-shrink: 0;
   border-radius: 6px;
@@ -78,4 +85,14 @@ margin: 8px auto;
 }
 .signUp-logIn-btn a:hover {
   text-decoration: underline;
+}
+@media (max-width: 1050px) {
+  
+.createAccount-form-control .firstName-lastName-wrapper{
+  flex-direction: column;
+}
+.firstName-lastName-wrapper  input{
+  /* width: 325px;  */
+  width: 100%; 
+}
 }

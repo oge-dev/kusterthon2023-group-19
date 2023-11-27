@@ -1,6 +1,7 @@
 .authenication-wrapper {
   position: relative;
-  max-width: 1440px;
+  /* max-width: 1440px; */
+  max-width: 100%;
   background: var(--primary-pure-white, #fff);
 }
 .authenication-wrapper .Logo {
@@ -23,6 +24,9 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.authenication-wrapper .authenication-content {
+  width: 100%;
 }
 .authenication-wrapper .authenication-content img {
   position: absolute;
@@ -57,7 +61,8 @@
   );
   box-shadow: 0px 4px 20px -1px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(10px);
-  max-width: 1020px;
+  /* max-width: 1020px; */
+  width: 80%;
   margin: 20px auto 0;
   text-align: center;
   padding: 28px 0;

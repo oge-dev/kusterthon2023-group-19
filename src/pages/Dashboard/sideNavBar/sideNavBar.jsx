@@ -11,7 +11,7 @@ const SideNavBar = () => {
         <NavLink to="/dashboard/transaction">Transaction</NavLink>
         <NavLink to="/dashboard/invoice">Invoice</NavLink>
         <NavLink to="/dashboard/settings">Settings</NavLink>
-        <NavLink to="/dashboard/logOUt">Log Out</NavLink>
+        <NavLink to="/dashboard/signOut">sign Out</NavLink>
       </div>
       <div className="outlet">
         <Outlet />
