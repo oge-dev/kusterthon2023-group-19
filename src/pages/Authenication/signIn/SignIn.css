@@ -1,84 +1,25 @@
-.signInlayout-wrappper .authenication-wrapper{
-  height: 768px;
-}
-.signInlayout-wrappper .Authenication-children {
-  height: 509px;
-}
-.signInlayout-wrappper{
-  position: relative;
-}
-
-.signIn-form-control h3 {
-  font-size: 28px;
+.SignOut-wrappper {
+  font-size: 18px;
   font-style: normal;
   font-weight: 600;
-  margin-bottom: 16px;
   line-height: normal;
-  color: var(--primary-dark-blue, #036);
+  text-align: center;
+  margin-top: 60px;
+  color: #000000;
 }
-.signIn-form-control input {
-  padding-left: 6px;
-  outline: none;
-  width: 709px;
-  height: 58px;
-  flex-shrink: 0;
-  border-radius: 6px;
-  background: var(--primary-pure-white, #fff);
-  margin: 8px 0;
-  font-size: 14px;
-  border: none;
-}
-.signIn-form-control .signIn-btn {
-  width: 709px;
-  height: 58px;
+.SignOut-wrappper .signOut-btn {
+  padding: 10px 30px;
   flex-shrink: 0;
   border-radius: 6px;
   background: linear-gradient(90deg, #369 0.03%, #6ac 100%);
-  color: var(--primary-pure-white, #fff);
+  color: #fff;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  margin-top: 80px;
+  margin-top: 10px;
   border: none;
 }
-.signIn-form-control .signIn-btn:hover {
-  text-decoration: underline;
-}
-.signIn-form-control .SignIn-register-btn {
-  width: 709px;
-  height: 58px;
-  flex-shrink: 0;
-  border-radius: 6px;
-  background: var(--primary-extra-light-blue, rgba(102, 170, 204, 0.6));
-  border: none;
-  margin-top: 16px;
-}
-.SignIn-register-btn a {
-  color: var(--primary-pure-white, #fff);
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  text-decoration: none;
-}
-.SignIn-register-btn a:hover {
-  text-decoration: underline;
-}
-.SignIn-forgetPassword-link {
-  
-  position: absolute;
- bottom: 30px;
- left: 46%;
-}
-.SignIn-forgetPassword-link a {
-  color: var(--primary-dark-blue, #036);
-  text-decoration: none;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-.SignIn-forgetPassword-link a:hover {
+.SignOut-wrappper .signOut-btn:hover {
   text-decoration: underline;
 }

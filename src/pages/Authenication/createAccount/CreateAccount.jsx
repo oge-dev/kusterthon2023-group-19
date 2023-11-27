@@ -121,7 +121,7 @@ const CreateAccount = () => {
                 style={{
                   position: "absolute",
                   top: "50%",
-                  right: "168px",
+                  right: "14%",
                   transform: "translateY(-50%)",
                   cursor: "pointer",
                 }}
@@ -145,7 +145,7 @@ const CreateAccount = () => {
                 style={{
                   position: "absolute",
                   top: "50%",
-                  right: "168px",
+                  right: "14%",
                   transform: "translateY(-50%)",
                   cursor: "pointer",
                 }}
