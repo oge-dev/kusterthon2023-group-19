@@ -1,0 +1,81 @@
+.createAccountlayout-wrappper .authenication-wrapper{
+  height: 1005px;
+}
+.createAccountlayout-wrappper .Authenication-children {
+  height: 724px;
+}
+
+.createAccount-form-control h3 {
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 16px;
+  line-height: normal;
+  color: var(--primary-dark-blue, #036);
+}
+.createAccount-form-control .firstName-lastName-wrapper{
+  display: flex;
+  justify-content: center;
+gap: 60px;
+}
+.firstName-lastName-wrapper  input{
+  width: 325px;
+height: 58px;
+flex-shrink: 0;
+border-radius: 6px;
+padding-left: 6px;
+outline: none;
+border: none;
+background: var(--primary-pure-white, #fff);
+margin: 8px auto;
+}
+.createAccount-form-control .email, .createAccount-form-control .password {
+  padding-left: 6px;
+  outline: none;
+  width: 709px;
+  height: 58px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: var(--primary-pure-white, #fff);
+  margin: 8px 0;
+  font-size: 14px;
+  border: none;
+}
+
+.createAccount-form-control .signUp-btn {
+  width: 709px;
+  height: 58px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #369 0.03%, #6ac 100%);
+  color: var(--primary-pure-white, #fff);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 80px;
+  border: none;
+}
+.createAccount-form-control .signUp-btn:hover {
+  text-decoration: underline;
+}
+.createAccount-form-control .signUp-logIn-btn{
+  width: 709px;
+  height: 58px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: var(--primary-extra-light-blue, rgba(102, 170, 204, 0.6));
+  border: none;
+  margin-top: 16px;
+}
+.signUp-logIn-btn a {
+  color: var(--primary-pure-white, #fff);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration: none;
+}
+.signUp-logIn-btn a:hover {
+  text-decoration: underline;
+}

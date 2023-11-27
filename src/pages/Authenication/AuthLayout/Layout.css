@@ -1,15 +1,29 @@
-.authenication-wrapper {
-  max-width: 100%;
+.authenication-wrapper .authenication-wrapper {
   position: relative;
+  max-width: 1440px;
+  background: var(--primary-pure-white, #fff);
+  font-family: "poppins", sans-serif;
 }
-.authenication-wrapper.Logo {
+.authenication-wrapper .authenication-wrapper.Logo {
   width: 100%;
   display: flex;
   justify-content: center;
+  padding: 28px 0 40px;
 }
-.authenication-wrapper .Logo img {
+.authenication-wrapper .authenication-wrapper .Logo img {
   width: 267px;
   height: 70px;
+  background: linear-gradient(
+    90deg,
+    #036 0.29%,
+    #6283a3 16.54%,
+    #507498 40.18%,
+    #27527e 62.83%,
+    #ccd9e5 100.06%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .authenication-wrapper .authenication-content {
@@ -21,7 +35,8 @@
 .authenication-wrapper img {
   position: absolute;
   max-width: 473px;
-  height: 273px;
+  /* height: 473px; */
+  height: 323px;
 }
 .authenication-wrapper .ellipse-one {
   top: 0;
@@ -51,4 +66,5 @@
   width: 60%;
   margin: 0 auto;
   text-align: center;
+  padding: 28px 0;
 }
