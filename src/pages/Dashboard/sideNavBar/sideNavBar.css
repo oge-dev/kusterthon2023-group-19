@@ -8,12 +8,35 @@ flex-direction: row;
     flex-direction: column;
     flex-grow: 1;
     height: 100vh;
-    background-color: #003366;
+    background: linear-gradient(180deg, #369 0.03%, #6ac 100%);
+    padding: 18px;
 }
 .links a{
    text-decoration: none;
    color: #ffffff;
+   margin: 16px 0;
+
 }
 .outlet{
     flex-grow: 6;
+    padding: 18px;
+}
+@media (max-width: 768px) {
+    .sideNavBar-wrapper{
+        flex-direction: column;
+        }
+        .links{
+            flex-direction: row;
+            flex-wrap: wrap;
+            height: auto;
+            justify-content: flex-end;
+            flex-grow: 0;
+        }
+        .links a{
+            margin: 4px 12px;
+         
+         }
+         .outlet{
+            flex-grow: 0;
+        }
 }
