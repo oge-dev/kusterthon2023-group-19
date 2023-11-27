@@ -7,9 +7,10 @@ const SideNavBar = () => {
     <div className="sideNavBar-wrapper">
       <div className="links">
         <NavLink to="/dashboard/admin">Admin</NavLink>
-        <NavLink to="/dashboard/customerProfile">Customer Profile</NavLink>
-        <NavLink to="/dashboard/transaction">Transaction</NavLink>
+        <NavLink to="/dashboard/clientProfile">Client Profile</NavLink>
         <NavLink to="/dashboard/invoice">Invoice</NavLink>
+        <NavLink to="/dashboard/paymentTransaction">Payment Transaction</NavLink>
+        <NavLink to="/dashboard/paymentReceived">Payment Received</NavLink>
         <NavLink to="/dashboard/settings">Settings</NavLink>
         <NavLink to="/dashboard/signOut">sign Out</NavLink>
       </div>

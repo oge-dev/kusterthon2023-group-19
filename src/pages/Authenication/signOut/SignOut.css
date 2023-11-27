@@ -1,94 +1,25 @@
-.form-control {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-.form-control h2 {
-  color: #003366;
-  font-size: 42px;
+.SignOut-wrappper {
+  font-size: 18px;
+  font-style: normal;
   font-weight: 600;
-  margin-bottom: 20px;
-}
-.form-control input {
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 8px;
-  margin: 8px 0;
-  outline: none;
-  border: none;
-  box-shadow: 0px 0px 5px #808080;
-  border-radius: 4px;
-}
-.form-control p {
+  line-height: normal;
+  text-align: center;
+  margin-top: 60px;
   color: #000000;
+}
+.SignOut-wrappper .signOut-btn {
+  padding: 10px 30px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #369 0.03%, #6ac 100%);
+  color: #fff;
   font-size: 18px;
-  font-weight: 400;
-}
-.form-control .fullName {
-  display: flex;
-  justify-content: space-between;
-}
-.form-control .fullName div {
-  width: 100%;
-}
-.form-control .fullName div:nth-of-type(1) {
-  margin-right: 4px;
-}
-.form-control .fullName div:nth-of-type(2) {
-  margin-left: 4px;
-}
-.Forget-Password {
-  display: flex;
-  flex-direction: column;
-  row-gap: 62px;
-}
-.form-control .submit-btn,
-.form-control .register-btn,
-.form-control .logIn-btn,
-.form-control .ForgetPassword-logIn-btn {
-  width: 100%;
-  font-size: 16px;
-  padding: 10px 0;
-  border: none;
-  color: #ffffff;
-  border-radius: 4px;
-}
-.form-control .submit-btn {
-  background-color: #003366;
-  margin: 44px 0px 12px;
-  border-radius: 4px;
-}
-
-.form-control .register-btn,
-.form-control .logIn-btn {
-  background-color: #66aacc;
-  margin: 4px 0 16px;
-}
-.form-control .ForgetPassword-logIn-btn {
-  background-color: #003366;
-}
-
-.form-control .register-btn a,
-.form-control .logIn-btn a,
-.form-control .ForgetPassword-logIn-btn a {
-  text-decoration: none;
-  color: #ffffff;
-}
-.forgetPassword-link {
-  position: absolute;
-  bottom: 64px;
-  left: 45%;
-  font-size: 18px;
+  font-style: normal;
   font-weight: 600;
+  line-height: normal;
+  margin-top: 10px;
+  border: none;
 }
-.forgetPassword-link a {
-  text-decoration: none;
-  color: #003366;
-}
-
-.forgetPassword-link a:hover,
-.register-btn a:hover,
-.logIn-btn a:hover,
-.submit-btn:hover,
-.ForgetPassword-logIn-btn a:hover {
+.SignOut-wrappper .signOut-btn:hover {
   text-decoration: underline;
 }
