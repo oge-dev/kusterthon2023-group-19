@@ -16,9 +16,10 @@ const Layout = ({ children }) => {
         <img src={Ellipse2} alt="" className="ellipse-three" />
         <img src={Ellipse3} alt="" className="ellipse-four" />
         <div className="Authenication-children">
-          <div className="children">{children}</div>
-        </div>
+          {children}
+          </div>
       </div>
+      {/* https://www.binaryboxtuts.com/reactjs-tutorials/how-to-develop-login-and-registration-in-reactjs-app-using-api/ */}
     </div>
   );
 };

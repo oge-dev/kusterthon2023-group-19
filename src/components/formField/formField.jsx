@@ -7,7 +7,7 @@ const FormField = ({
   maxLength,
   inputName,
   onChange,
-  placeholder,
+  placeholder, className
 }) => {
   return (
     <div>
@@ -18,7 +18,8 @@ const FormField = ({
           value={value}
           onChange={onChange}
           maxLength={maxLength}
-          name={inputName}
+          name={inputName} required
+          className={className}
         />
       </label>
     </div>
