@@ -48,7 +48,7 @@ const LandingPage = (props) => {
         </div>
       </section>
 
-      <section>
+      <section className="features__section">
         <div className="container">
           <h2 className="subheading"> CrediEase Features</h2>
 
@@ -137,6 +137,11 @@ const LandingPage = (props) => {
       <section>
         <div className="container">
           <h2 className="subheading">Get In Touch With... </h2>
+
+          <div className="get-touch">
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, error.</h2>
+
+          </div>
 
         </div>
       </section>

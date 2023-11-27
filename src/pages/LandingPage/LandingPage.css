@@ -539,7 +539,6 @@ font-weight: 700;
   /***********************************/
   /* FEATURES SECTION */
   /***********************************/
-
   .features{
     display: flex;
     flex-wrap: wrap;
@@ -688,6 +687,16 @@ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 .faq{
   width: min(600px, 100%);
   margin: 0 auto;
+}
+
+.get-touch{
+  border-radius: 6px;
+border: 1px solid rgba(255, 255, 255, 0.40);
+background: url(<path-to-image>), lightgray 0% 0% / 100px 100px repeat, linear-gradient(180deg, rgba(217, 217, 217, 0.40) 0%, rgba(217, 217, 217, 0.10) 100%);
+box-shadow: 0px 4px 20px -1px rgba(0, 0, 0, 0.15);
+backdrop-filter: blur(10px);
+width: min(600px, 100%);
+margin: 0 auto;
 }
 
 
