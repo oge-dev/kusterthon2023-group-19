@@ -20,11 +20,11 @@ const ForgetPassWord = () => {
         "https://easyinvoiceapi.onrender.com/api/Auth/ForgotPassword",
         { email }
       );
+      console.log(response.data);
       // Save email to local storage before making the API request
-      localStorage.setItem("resetEmail", { email });
+      localStorage.setItem('forgottenPasswordData', JSON.stringify({ email }));
 
       navigate("/resetPassword"); // Navigate to ResetPassword component
-      console.log(response.data);
     } catch (error) {
       console.error("Error sending forgot password request:", error);
       setMessage("An error occurred. Please try again later.error:", error);
@@ -57,7 +57,7 @@ const ForgetPassWord = () => {
 
           {/* Registration link */}
           <button className="forgetPassword-logIn-btn">
-            <Link to="/logIn">Back to Sign In</Link>
+            <Link to="/signIn">Back to Sign In</Link>
           </button>
         </div>
       </Layout>
@@ -65,44 +65,31 @@ const ForgetPassWord = () => {
   );
 };
 
-const ResetPassword = ({ match }) => {
+const ResetPassword = () => {
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  useEffect(() => {
-    // Retrieve stored email from local storage
-    const resetEmail = localStorage.getItem("resetEmail");
 
-    // If email is not present, redirect to forget password page
-    if (!resetEmail) {
-      setMessage(
-        "Invalid reset link. Please initiate the reset process again."
-      );
-      navigate("/forgetPassWord");
-    }
-  }, [navigate]);
 
-  const handleResetPassword = async () => {
+  const handleResetPassword = async (e) => {
     e.preventDefault();
     try {
       // Retrieve stored email from local storage
-      const resetEmail = localStorage.getItem("resetEmail");
+      const forgottenPasswordData = JSON.parse(localStorage.getItem('forgottenPasswordData'));
 
-      // Send password reset token, email, and new password to the server
-    await axios.post(
-        "https://easyinvoiceapi.onrender.com/api/Auth/ResetPassword",
-        { resetToken: match.params.token, email: resetEmail, password }
-      );
-      // Remove stored email from local storage
-      localStorage.removeItem("resetEmail");
 
-      // Display a success message to the user
-      setMessage(
-        "Password reset successfully. You can now log in with your new password."
-      );
+      
+       // Send password reset token, email, and new password to the server
+       await axios.post('https://easyinvoiceapi.onrender.com/api/Auth/ResetPassword', {
+        email: forgottenPasswordData.email,
+        password,
+        token: confirmPassword,
+      });
+     // Clear the data from local storage after successful password reset
+     localStorage.removeItem('forgottenPasswordData');
 
       // Navigate to the success page after a accountActivated
       navigate("/accountActivated");
@@ -126,7 +113,7 @@ const ResetPassword = ({ match }) => {
             <div style={{ position: "relative" }}>
               <FormField
                 htmlFor={"password"}
-                type={"password"}
+                type={showPassword ? "text" : "password"}
                 inputName={"password"}
                 placeholder={"Enter your new password"}
                 value={password}
@@ -136,7 +123,7 @@ const ResetPassword = ({ match }) => {
                 style={{
                   position: "absolute",
                   top: "50%",
-                  right: "168px",
+                  right: "14%",
                   transform: "translateY(-50%)",
                   cursor: "pointer",
                 }}
@@ -148,7 +135,7 @@ const ResetPassword = ({ match }) => {
             <div style={{ position: "relative" }}>
               <FormField
                 htmlFor={"password"}
-                type={"password"}
+                type={showPassword ? "text" : "password"}
                 inputName={"password"}
                 placeholder={"confirm your new Password"}
                 value={confirmPassword}
@@ -158,7 +145,7 @@ const ResetPassword = ({ match }) => {
                 style={{
                   position: "absolute",
                   top: "50%",
-                  right: "168px",
+                  right: "14%",
                   transform: "translateY(-50%)",
                   cursor: "pointer",
                 }}

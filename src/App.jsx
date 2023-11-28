@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import SignIn from "./pages/Authenication/signIn/SignIn";
-import CreateAccount from "./pages/Authenication/CreateAccount/CreateAccount";
+import CreateAccount from "./pages/Authenication/createAccount/CreateAccount";
 import AccountActivated from "./pages/Authenication/AccountActivated/AccountActivated";
 import { ForgetPassWord, ResetPassword } from "./pages/Authenication/PasswordForm/PasswordForm";
 import Dashboard from "./pages/Dashboard/Dashboard";

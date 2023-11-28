@@ -121,7 +121,7 @@ const CreateAccount = () => {
                 style={{
                   position: "absolute",
                   top: "50%",
-                  right: "168px",
+                  right: "14%",
                   transform: "translateY(-50%)",
                   cursor: "pointer",
                 }}
@@ -145,7 +145,7 @@ const CreateAccount = () => {
                 style={{
                   position: "absolute",
                   top: "50%",
-                  right: "168px",
+                  right: "14%",
                   transform: "translateY(-50%)",
                   cursor: "pointer",
                 }}
@@ -161,7 +161,7 @@ const CreateAccount = () => {
             </button>
           </form>
           <button className="signUp-logIn-btn">
-            <Link to="/logIn">I already have an Account</Link>
+            <Link to="/signIn">I already have an Account</Link>
           </button>
         </div>
       </Layout>

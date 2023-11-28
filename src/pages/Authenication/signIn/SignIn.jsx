@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Layout from "../AuthLayout/Layout";
 import FormField from "../../../components/formField/formField";
@@ -86,7 +86,7 @@ const SignIn = () => {
                 style={{
                   position: "absolute",
                   top: "50%",
-                  right: "168px",
+                  right: "14%",
                   transform: "translateY(-50%)",
                   cursor: "pointer",
                 }}
@@ -106,7 +106,7 @@ const SignIn = () => {
           </form>
           {/* Registration link */}
           <button className="SignIn-register-btn">
-            <Link to="/register">Create Account</Link>
+            <Link to="/createAccount">Create Account</Link>
           </button>
         </div>
       </Layout>
