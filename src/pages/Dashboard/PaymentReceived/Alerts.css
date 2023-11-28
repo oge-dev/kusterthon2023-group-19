@@ -1,0 +1,24 @@
+/* Add this to your styles or use a styling solution like styled-components */
+
+.alert {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .alert.info {
+    background-color: #cce5ff;
+  }
+  
+  .alert.success {
+    background-color: #d4edda;
+  }
+  
+  .alert.warning {
+    background-color: #fff3cd;
+  }
+  
+  .alert.error {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  

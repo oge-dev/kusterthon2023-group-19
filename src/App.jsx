@@ -8,9 +8,10 @@ import AccountActivated from "./pages/Authenication/AccountActivated/AccountActi
 import { ForgetPassWord, ResetPassword } from "./pages/Authenication/PasswordForm/PasswordForm";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Admin from "./pages/Dashboard/Admin/Admin";
-import Customer from "./pages/Dashboard/Customer/Customer";
-import Transaction from "./pages/Dashboard/Transaction/Transaction";
+import ClientProfile from "./pages/Dashboard/ClientProfile/ClientProfile";
 import Invoice from "./pages/Dashboard/Invioce/Invioce";
+import PaymentTransaction from "./pages/Dashboard/PaymentTransaction/PaymentTransaction";
+import PaymentReceived from "./pages/Dashboard/PaymentReceived/PaymentReceived";
 import Settings from "./pages/Dashboard/Settings/Settings";
 import SignOut from "./pages/Authenication/signOut/SignOut";
 import {ftData, stepsData, aboutData, pricingData} from "./utils/data.js"
@@ -37,9 +38,10 @@ function App() {
       <Route path="/resetPassword" element={<ResetPassword />} />
       <Route path="/dashboard" element={<Dashboard />}>
         <Route path="/dashboard/admin" element={<Admin />} />
-        <Route path="/dashboard/customerProfile" element={<Customer />} />
-        <Route path="/dashboard/transaction" element={<Transaction />} />
+        <Route path="/dashboard/clientProfile" element={<ClientProfile />} />
         <Route path="/dashboard/invoice" element={<Invoice />} />
+        <Route path="/dashboard/paymentTransaction" element={<PaymentTransaction />} />
+        <Route path="/dashboard/paymentReceived" element={<PaymentReceived />} />
         <Route path="/dashboard/settings" element={<Settings />} />
         <Route path="/dashboard/signOut" element={<SignOut />} />
       </Route>
