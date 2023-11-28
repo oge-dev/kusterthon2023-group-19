@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./LandingPage.css";
 import customa1 from "../../img/cs1.svg";
 import customa2 from "../../img/cs2.svg";
@@ -12,8 +12,24 @@ import GridTwoCard from "../../components/GridTwoCard";
 import Footer from "../../components/Footer";
 import NavBar from "../../components/Navbar";
 import PricingCard from "../../components/PricingCard";
+import InputGroup from "../../InputGroup/InputGroup"
+import TextArea from "../../InputGroup/TextAreaGroup";
+import logo from "../../img/Logo.png"
 
 const LandingPage = (props) => {
+
+
+  // const section1Ref = useRef(null);
+  // const section2Ref = useRef(null);
+
+  // const scrollToSection = (ref) => {
+  //   if (ref && ref.current) {
+  //     window.scrollTo({
+  //       top: ref.current.offsetTop,
+  //       behavior: 'smooth',
+  //     });
+  //   }
+  // };
   
   return (
     <>
@@ -49,7 +65,7 @@ const LandingPage = (props) => {
         </div>
       </section>
 
-      <section className="features__section">
+      <section className="features__section" id="">
         <div className="container">
           <h2 className="subheading"> CrediEase Features</h2>
 
@@ -122,7 +138,7 @@ const LandingPage = (props) => {
       </section>
 
 
-<section className="pricing-section">
+<section className="pricing-section" id="pricing">
         <div className="container">
           <h2 className="subheading">Pricing</h2>
           <p className="subtext"> CrediEase equips you with the complete toolkit necessary to maintain financial control and optimize your business operations seamlessly – precisely tailored to your preferences and workflow.</p>
@@ -156,8 +172,32 @@ const LandingPage = (props) => {
           <h2 className="subheading">Get In Touch With... </h2>
 
           <div className="get-touch">
-            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, error.</h2>
-
+             <div className="img">
+             <img src={logo} />
+             </div>
+              <InputGroup
+              type="text"
+              placeholder="Enter Your Name"
+              id="name"
+              name="email"
+              className="field__input"
+              
+            />
+             <InputGroup
+              type="email"
+              placeholder="Enter Your Email"
+              id="email"
+              name="email"
+              className="field__input"
+              
+            />
+            <TextArea  type="text"
+              placeholder="Description"
+              id="address"
+              className="field__input"
+              
+              name="address"/>
+              <BtnElement text="Submit" className="btn"/>
           </div>
 
 

@@ -1,9 +1,21 @@
 
 import React,{ useState} from "react";
 import { Link } from "react-router-dom";
+// import { Link, animateScroll as scroll, scroller } from 'react-scroll';
+
 import {FaBars, FaTimes} from "react-icons/fa";
 import logodark from "../assets/Logodark.svg"
 export default function (props){
+
+    // Scroll to section1
+const scrollToSection1 = () => {
+    scroller.scrollTo('section1', {
+      duration: 800,
+      delay: 0,
+      smooth: 'easeInOutQuart',
+    });
+  };
+  
 
 
     return(
@@ -19,8 +31,10 @@ export default function (props){
                 </div>
                     <ul className={`${props.showNavBar && "active"} nav__list`}>
                       
-                        <li className="nav__item"> <Link to="/feature" className="nav__link">Features</Link></li>
-                        <li className="nav__item"> <Link to="/blog"  className="nav__link">Pricing</Link></li>
+                        <li className="nav__item"> <Link to=""  className="nav__link">Features</Link></li>
+                        <li className="nav__item"> <Link to=""  className="nav__link">Pricing</Link></li>
+                        <li className="nav__item"> <Link to=""  className="nav__link">About Us</Link></li>
+                        <li className="nav__item"> <Link to=""  className="nav__link">Contact</Link></li>
                         <li className="nav__item"> <Link to="/signIn" className="nav__link">Sign Up</Link></li>
                         <li className="nav__item"> <Link to="/createAccount" className="nav__link btn"> <i className="fa-solid fa-link"></i>Login</Link></li>
 

@@ -1,0 +1,15 @@
+.field__label{
+  display: block;
+  margin: 1em 0;
+}
+.field__input{
+  padding: .8em 1.6em;
+  width: 100%;
+  margin-bottom: .5em;
+}
+.field__input:focus{
+  border: none;
+}
+.field__error{
+  color: red;
+}
