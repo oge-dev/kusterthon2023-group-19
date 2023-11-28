@@ -1,6 +1,6 @@
 import React from "react";
 
-import logo from "../assets/react.svg"
+import logodark from "../assets/Logodark.svg"
 
 export default function Footer(){
     return(
@@ -13,7 +13,7 @@ export default function Footer(){
                 {/* <p className="footer__text">Why Invoice-name</p> */}
                 
                 <div >
-                <img src={logo} alt="logo"/>
+                <img src={logodark} alt="logo"/>
                     <p>
                     Our mission is to empower entrepreneurs and small business owners like you with a reliable and user-friendly payment management solution.
                     </p>
