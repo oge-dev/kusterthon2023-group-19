@@ -1,3 +1,4 @@
+import React, {useState} from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import LandingPage from "./pages/LandingPage/LandingPage";
@@ -13,12 +14,23 @@ import PaymentTransaction from "./pages/Dashboard/PaymentTransaction/PaymentTran
 import PaymentReceived from "./pages/Dashboard/PaymentReceived/PaymentReceived";
 import Settings from "./pages/Dashboard/Settings/Settings";
 import SignOut from "./pages/Authenication/signOut/SignOut";
-import {ftData, stepsData, aboutData} from "./utils/ftData.js"
+import {ftData, stepsData, aboutData, pricingData} from "./utils/data.js"
 import NotFound from "./pages/NotFound/NotFound";
 function App() {
+
+  const [showNavBar, setShowNavBar] = useState(false);
+
+
+
+
+  function handleShowNavBar(){
+      setShowNavBar(!showNavBar)
+  }
+
+
   return (
     <Routes className="App">
-      <Route path="/" element={<LandingPage ftData={ftData} stepsData={stepsData} aboutData={aboutData}/>} />
+      <Route path="/" element={<LandingPage pricingData={pricingData} handleShowNavBar={handleShowNavBar} showNavBar={showNavBar} ftData={ftData} stepsData={stepsData} aboutData={aboutData}/>} />
       <Route path="/signIn" element={<SignIn />} />
       <Route path="/createAccount" element={<CreateAccount />} />
       <Route path="/accountActivated" element={<AccountActivated />} />
