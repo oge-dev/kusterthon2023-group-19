@@ -537,6 +537,13 @@ margin: 0 auto;
 .nav__list{
  display: flex;
 }
+
+.pricing__tag{
+  font-size: 1.8rem;
+}
+.pricing__amt{
+  font-size: 1.5rem;
+}
 .nav__link:not(.btn){
   /* text-decoration: underline wavy var(--clr-primary-400) 0.15rem;
   text-underline-offset: 0.5rem; */
@@ -589,3 +596,51 @@ margin: 0 auto;
     display: block;
     }
  }
+
+ .pricing-section{
+  height: 100%;
+  background-image: url(/public/assests/vclipath.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
+
+ .pricing{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3em;
+  margin-top: 4em;
+ }
+
+ .pricing__card{
+  flex-grow: 1;
+    flex-basis: 250px;
+    border-radius: 20px;
+background: var(--primary-pure-white, #FFF);
+text-align: center;
+padding: 2em;
+ }
+.pricing__tag{
+  color: var(--clr-primary-200);
+}
+.pricing__amt{
+  color: #A4A4A4;
+}
+ .pricing__item{
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+ }
+ 
+ .pricing__icon{
+  margin-right: .5em;
+  color: var(--clr-primary-100);
+ }
+ .pricing__icon.blue{
+  color: var(--clr-primary-200);
+ }
+ .pricing__icon.gray, .pricing__text.gray{
+  color: #A4A4A4;
+ }
+ 
+

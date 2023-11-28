@@ -13,7 +13,7 @@ import Transaction from "./pages/Dashboard/Transaction/Transaction";
 import Invoice from "./pages/Dashboard/Invioce/Invioce";
 import Settings from "./pages/Dashboard/Settings/Settings";
 import SignOut from "./pages/Authenication/signOut/SignOut";
-import {ftData, stepsData, aboutData} from "./utils/ftData.js"
+import {ftData, stepsData, aboutData, pricingData} from "./utils/ftData.js"
 import NotFound from "./pages/NotFound/NotFound";
 function App() {
 
@@ -29,7 +29,7 @@ function App() {
 
   return (
     <Routes className="App">
-      <Route path="/" element={<LandingPage handleShowNavBar={handleShowNavBar} showNavBar={showNavBar} ftData={ftData} stepsData={stepsData} aboutData={aboutData}/>} />
+      <Route path="/" element={<LandingPage pricingData={pricingData} handleShowNavBar={handleShowNavBar} showNavBar={showNavBar} ftData={ftData} stepsData={stepsData} aboutData={aboutData}/>} />
       <Route path="/signIn" element={<SignIn />} />
       <Route path="/createAccount" element={<CreateAccount />} />
       <Route path="/accountActivated" element={<AccountActivated />} />

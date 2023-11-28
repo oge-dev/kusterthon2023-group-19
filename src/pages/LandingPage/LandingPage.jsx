@@ -11,6 +11,7 @@ import BtnElement from "../../components/BtnElement";
 import GridTwoCard from "../../components/GridTwoCard";
 import Footer from "../../components/Footer";
 import NavBar from "../../components/Navbar";
+import PricingCard from "../../components/PricingCard";
 
 const LandingPage = (props) => {
   
@@ -121,6 +122,22 @@ const LandingPage = (props) => {
       </section>
 
 
+<section className="pricing-section">
+        <div className="container">
+          <h2 className="subheading">Pricing</h2>
+          <p className="subtext"> CrediEase equips you with the complete toolkit necessary to maintain financial control and optimize your business operations seamlessly – precisely tailored to your preferences and workflow.</p>
+          
+          <div className="pricing">
+            {props.pricingData.map(item=>(
+              <PricingCard key={item.id} item={item} />
+            ))}
+            
+          </div>
+          </div>
+      </section>
+
+
+
       <section>
         <div className="container">
           <h2 className="subheading">About Us</h2>
@@ -142,6 +159,7 @@ const LandingPage = (props) => {
             <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, error.</h2>
 
           </div>
+
 
         </div>
       </section>

@@ -5,13 +5,13 @@ import cfm from "../../src/assets/cfm.png"
 export const ftData = [
     {
         id: 1,
-        ftImg:{cfm},
+        ftImg:"https://i.ibb.co/bX423tr/cfm.png",
         title: "Client Profile Management",
         text:"Effortlessly create and organize client profiles, storing essential information such as names, contact details, and payment terms. Streamline your client database for efficient transactions."
     },
     {
         id: 2,
-        ftImg:"/public/assests/invoicetrack.png",
+        ftImg:"https://i.ibb.co/jLjc6Mv/invoicetrack.png",
         title: "Invoice Generation & Tracking",
         text:"Generate unique, professional invoices tailored to each client or project. Seamlessly track payment statuses, avoid duplicates, and gain clarity on pending or paid invoices in real-time."
     },
@@ -96,8 +96,82 @@ export const aboutData =[
 export const pricingData=[
     {
         id: 1,
+        tag: "Basic",
+        model: "free",
+        // features: ["Unlimited Client Profiles", "Unlimited Invoices","Real-time Payment Tracking","Automated Reminder Alerts","Customizable Dashboard", "Integration Capabilities", "Priority Customer Support" ]    
+
+        features: [{
+            text:"Unlimited Client Profiles",
+            color: "blue"
+        }, {
+            text: "Unlimited Invoices",
+            color: "blue"
+
+        },{
+            text:"Real-time Payment Tracking",
+            color:"gray"
+        },{
+            text: "Automated Reminder Alerts",
+            color: "gray"
+        },{
+            text: "Customizable Dashboard",
+            color:"gray"
+        }, {
+            text:  "Priority Customer Support",
+            color: "gray"
+        } ]
+    },
+    {
+        id: 2,
         tag: "Pro",
         model: "#9,999/month",
+        features: [{
+            text:"Unlimited Client Profiles",
+            color: "blue"
+        }, {
+            text: "Unlimited Invoices",
+            color: "blue"
+
+        },{
+            text:"Real-time Payment Tracking",
+            color:"blue"
+        },{
+            text: "Automated Reminder Alerts",
+            color: "gray"
+        },{
+            text: "Customizable Dashboard",
+            color:"gray"
+        }, {
+            text:  "Priority Customer Support",
+            color: "gray"
+        } ]
+        // features: ["Unlimited Client Profiles", "Unlimited Invoices","Real-time Payment Tracking","Automated Reminder Alerts","Customizable Dashboard", "Integration Capabilities", "Priority Customer Support" ]
+        
+    },
+    {
+        id: 3,
+        tag: "Premium ",
+        model: "#15,999/month",
+        features: [{
+            text:"Unlimited Client Profiles",
+            color: "blue"
+        }, {
+            text: "Unlimited Invoices",
+            color: "blue"
+
+        },{
+            text:"Real-time Payment Tracking",
+            color:"blue"
+        },{
+            text: "Automated Reminder Alerts",
+            color: "blue"
+        },{
+            text: "Customizable Dashboard",
+            color:"blue"
+        }, {
+            text:  "Priority Customer Support",
+            color: "blue"
+        } ]
         
 
     }
