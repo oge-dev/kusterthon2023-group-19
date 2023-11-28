@@ -116,22 +116,7 @@
     width: min(1300px, 90%);
     margin: 0 auto;
   }
-  
-  .fw-regular{
-    font-weight: var(--fw-regular);
-  }
-  
-  .fw-semi-bold{
-    font-weight: var(--fw-semi-bold);
-  }
-  
-  .fw-bold{
-    font-weight: var(--fw-bold);
-  }
-  .fs-primary-heading{
-    font-size: var(--fs-primary-heading);
-  
-  }
+
   .stack > * + *{
   margin-block-start: 1.5rem;
   }
@@ -169,7 +154,7 @@
 /* HEADER */
 /**************************/
 .header{
-  padding: 2rem 0;
+  padding: 1.5rem 0;
   background-color: var(--clr-primary-200);
   /* position: relative; */
 }

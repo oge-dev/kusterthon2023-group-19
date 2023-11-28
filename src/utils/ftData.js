@@ -1,9 +1,11 @@
 
+import cfm from "../../src/assets/cfm.png"
+
 
 export const ftData = [
     {
         id: 1,
-        ftImg:"/public/assests/cfm.png",
+        ftImg:{cfm},
         title: "Client Profile Management",
         text:"Effortlessly create and organize client profiles, storing essential information such as names, contact details, and payment terms. Streamline your client database for efficient transactions."
     },
