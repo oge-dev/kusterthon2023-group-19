@@ -29,7 +29,7 @@ function App() {
 
   return (
     <Routes className="App">
-      <Route path="/" element={<LandingPage ftData={ftData} stepsData={stepsData} aboutData={aboutData}/>} />
+      <Route path="/" element={<LandingPage handleShowNavBar={handleShowNavBar} showNavBar={showNavBar} ftData={ftData} stepsData={stepsData} aboutData={aboutData}/>} />
       <Route path="/signIn" element={<SignIn />} />
       <Route path="/createAccount" element={<CreateAccount />} />
       <Route path="/accountActivated" element={<AccountActivated />} />

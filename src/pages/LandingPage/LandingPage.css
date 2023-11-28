@@ -131,7 +131,7 @@
     padding: 60px 0;
   }
   .subheading{
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     text-align: center;
     width: min(600px, 100%);
     margin: 0 auto;
@@ -183,54 +183,11 @@ cursor: pointer;
   color: #fff;
   font-weight: 500;
 }
-.nav-menu{
+.nav__menu, .nav__close{
   font-size: 1.4rem;
   color: var(--clr-primary-300);
 }
 
-  
-  .accordion{
-    border: 1px solid  var(--clr-primary-300);
-    border-radius: 6px;
-    padding: 1em;
-    margin-bottom: 1em;
-    overflow: hidden;
-    border-radius: 6px;
-  background: #FFF;
-  box-shadow: 0px 0px 5px 1px rgba(0, 58, 78, 0.10);
-  }
-  .accordion.active{
-    border: none;
-     background-color: rgba(100, 100, 100, 0.15);
-    padding: 1.5em;
-  }
-  .accordion__header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .accordion__heading{
-    color: var(--clr-primary-900);
-    font-size: 1.1rem;
-    font-weight: 600;
-  }
-  .accordion__text{
-    color: var(--clr-primary-900);
-    font-size: .9rem;
-    line-height: 1.6;
-    height: 0;
-   
-    /* transition: height .5s ease-in-out; */
-  }
-  .accordion__text.open{
-    height: auto;
-  }
-  .accordion__btn{
-    color: var(--clr-primary-400);
-    font-size: 1.3rem;
-    cursor: pointer;
-  }
-  
   
   /*********************/
   /* Using General CSS*/
@@ -335,7 +292,7 @@ cursor: pointer;
 
 .section-hero{
     /* Ensuring the section takes the full viewport height */
-  height: 100vh;
+  height: 100%;
   background-image: url(/public/assests/hero-bg.png);
   background-position: center;
   background-repeat: no-repeat;
@@ -560,7 +517,7 @@ margin: 0 auto;
 /*****************************/
 @media(min-width:768px){
  .hero__title{
-  font-size: 3rem;
+  font-size: 3.3rem;
  }
 
  .features__title{
@@ -600,4 +557,35 @@ margin: 0 auto;
   .features__title{
     font-size: 1rem;
   }
+
+  .nav__list{
+    position: absolute;
+    top: 70px;
+    /* height: calc(100vh - 60px); */
+    visibility: hidden;
+    background-color: var(--clr-neutral-100);
+    width: 100%;
+    padding: 1em;
+    border-radius: 10px;
+
+  
+   
+  }
+  .nav__list.active{
+    visibility: visible;
+    z-index: 1;
+    left: 0;
+    right: 0;
+  }
+  .nav__item{
+    margin-top: 2em;
+  }
+  .nav__link{
+    color: var(--clr-neutral-900);
+   
+  }
+  
+  .nav__icon{
+    display: block;
+    }
  }

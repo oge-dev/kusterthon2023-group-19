@@ -10,13 +10,13 @@ import FeatureCard from "../../components/FeatureCard";
 import BtnElement from "../../components/BtnElement";
 import GridTwoCard from "../../components/GridTwoCard";
 import Footer from "../../components/Footer";
-import NavBar from "../../components/NavBar";
+import NavBar from "../../components/Navbar";
 
 const LandingPage = (props) => {
   
   return (
     <>
-    <NavBar/>
+    <NavBar handleShowNavBar={props.handleShowNavBar} showNavBar={props.showNavBar} />
     <main className="landing">
       <section className="section-hero">
         <div className="container">
